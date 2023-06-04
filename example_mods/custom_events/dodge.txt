@@ -1,0 +1,7 @@
+Triggers a Dodge event
+
+Balue 1: The time the player needs to press Space
+in seconds (Default: 1)
+
+Value 2: How much health is gained or lost
+when dodging or missing a dodge (Default: 0.5)

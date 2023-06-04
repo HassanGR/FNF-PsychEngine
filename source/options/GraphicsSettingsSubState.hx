@@ -67,9 +67,8 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 			'int',
 			60);
 		addOption(option);
-
-		option.minValue = 60;
-		option.maxValue = 240;
+		option.minValue = 1;
+		option.maxValue = 2000;
 		option.displayFormat = '%v FPS';
 		option.onChange = onChangeFramerate;
 		#end
@@ -89,7 +88,7 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 		}
 	}
 
-	function onChangeFramerate()
+	public function onChangeFramerate()
 	{
 		if(ClientPrefs.framerate > FlxG.drawFramerate)
 		{

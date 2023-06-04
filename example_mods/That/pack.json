@@ -1,0 +1,7 @@
+{
+	"name": "That mod",
+	"description": "That mod is just cool man. Cuz it is good, and stuff, y'know? Mhm, yeah yeah, uhuh, mhm, les go. B)",
+	"restart":false,
+	"runsGlobally": false,
+	"color": [106, 0, 175]
+}

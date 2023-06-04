@@ -1,0 +1,41 @@
+{
+	"songs": [
+		[
+			"that",
+			"senpai-pixel",
+			[
+				106,
+				0,
+				175
+			]
+		],
+		[
+			"shit",
+			"bf",
+			[
+				186,
+				93,
+				35
+			]
+		]
+	],
+	"hiddenUntilUnlocked": false,
+	"hideFreeplay": false,
+	"weekBackground": "stage",
+	"difficulties": "",
+	"weekCharacters": [
+		"dad",
+		"bf",
+		"gf"
+	],
+	"storyName": "That mod is cool",
+	"weekName": "that week",
+	"freeplayColor": [
+		146,
+		113,
+		253
+	],
+	"hideStoryMode": false,
+	"weekBefore": "tutorial",
+	"startUnlocked": true
+}

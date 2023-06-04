@@ -1,0 +1,4 @@
+a very good little switching icon
+
+value 1: which icon you want to switch (1: bf, 2: dad)
+value 2: what icon you want to change it to? (ICON MUST BE IN mods/icons)

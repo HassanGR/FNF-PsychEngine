@@ -87,7 +87,7 @@ class ModsMenuState extends MusicBeatState
 		noModsTxt.borderSize = 2;
 		add(noModsTxt);
 		noModsTxt.screenCenter();
-		visibleWhenNoMods.push(noModsTxt);
+		visibleWhenNoMods.push(noModsTxt); 
 
 		var path:String = 'modsList.txt';
 		if(FileSystem.exists(path))

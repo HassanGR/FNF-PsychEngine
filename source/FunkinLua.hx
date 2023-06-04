@@ -223,7 +223,7 @@ class FunkinLua {
 		#elseif android
 		set('buildTarget', 'android');
 		#else
-		set('buildTarget', 'unknown');
+		set('buildTarget', 'unknown'); // when they playin on a toaster
 		#end
 
 		// custom substate

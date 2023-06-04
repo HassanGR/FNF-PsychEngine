@@ -15,6 +15,7 @@ import lime.utils.Assets;
 import flixel.FlxSubState;
 import flash.text.TextField;
 import flixel.FlxG;
+import flixel.util.FlxSpriteUtil;
 import flixel.FlxSprite;
 import flixel.util.FlxSave;
 import haxe.Json;
@@ -40,6 +41,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 	private var boyfriend:Character = null;
 	private var descBox:FlxSprite;
 	private var descText:FlxText;
+	private var goodBox:FlxSprite;
 
 	public var title:String;
 	public var rpcTitle:String;
@@ -71,9 +73,11 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		checkboxGroup = new FlxTypedGroup<CheckboxThingie>();
 		add(checkboxGroup);
 
-		descBox = new FlxSprite().makeGraphic(1, 1, FlxColor.BLACK);
-		descBox.alpha = 0.6;
-		add(descBox);
+		descBox = new FlxSprite().makeGraphic(1, 1, FlxColor.TRANSPARENT);
+        descBox.alpha = 0;
+        FlxSpriteUtil.drawRoundRect(descBox, descBox.x, descBox.y, descBox.width, descBox.height, 3, 3);
+        descBox.color = 0xff000000;
+        add(descBox);
 
 		var titleText:Alphabet = new Alphabet(75, 40, title, true);
 		titleText.scaleX = 0.6;
@@ -85,6 +89,7 @@ class BaseOptionsMenu extends MusicBeatSubstate
 		descText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		descText.scrollFactor.set();
 		descText.borderSize = 2.4;
+		descText.alpha = 0;
 		add(descText);
 
 		for (i in 0...optionsArray.length)
@@ -135,13 +140,29 @@ class BaseOptionsMenu extends MusicBeatSubstate
 	var holdValue:Float = 0;
 	override function update(elapsed:Float)
 	{
+
+		descText.y = descBox.y;
+		descText.alpha = descBox.alpha;
+		
 		if (controls.UI_UP_P)
 		{
 			changeSelection(-1);
+
+			descBox.alpha = 0;
+			descBox.y = descBox.y + 75;
+			
+			FlxTween.tween(descBox, {y : descText.y - 75}, 0.7, {ease: FlxEase.circInOut});
+			FlxTween.tween(descBox, {alpha : 1}, 0.4, {ease: FlxEase.circInOut});
 		}
 		if (controls.UI_DOWN_P)
 		{
 			changeSelection(1);
+
+			descBox.alpha = 0;
+			descBox.y = descBox.y + 75;
+
+			FlxTween.tween(descBox, {y : descText.y - 75}, 0.7, {ease: FlxEase.circInOut});
+			FlxTween.tween(descBox, {alpha : 1}, 0.4, {ease: FlxEase.circInOut});
 		}
 
 		if (controls.BACK) {

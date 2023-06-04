@@ -1,0 +1,3 @@
+cool caption for your talking characters
+
+value 1: what the text should be? (ex: heh, pretty good)

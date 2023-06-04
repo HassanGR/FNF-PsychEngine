@@ -85,15 +85,15 @@ class PlayState extends MusicBeatState
 	public static var STRUM_X_MIDDLESCROLL = -278;
 
 	public static var ratingStuff:Array<Dynamic> = [
-		['You Suck!', 0.2], //From 0% to 19%
-		['Shit', 0.4], //From 20% to 39%
-		['Bad', 0.5], //From 40% to 49%
-		['Bruh', 0.6], //From 50% to 59%
-		['Meh', 0.69], //From 60% to 68%
-		['Nice', 0.7], //69%
-		['Good', 0.8], //From 70% to 79%
-		['Great', 0.9], //From 80% to 89%
-		['Sick!', 1], //From 90% to 99%
+		['what da hail!', 0.2], //From 0% to 19%
+		['the fuck..', 0.4], //From 20% to 39%
+		['timmy is better.', 0.5], //From 40% to 49%
+		['are you serious right now bro?', 0.6], //From 50% to 59%
+		['good job that was awful', 0.69], //From 60% to 68%
+		['very bad', 0.7], //69%
+		['getting somewhere', 0.8], //From 70% to 79%
+		['very nice!', 0.9], //From 80% to 89%
+		['perfectos.', 1], //From 90% to 99%
 		['Perfect!!', 1] //The value on this one isn't used actually, since Perfect is always "1"
 	];
 
@@ -1017,9 +1017,10 @@ class PlayState extends MusicBeatState
 
 		var showTime:Bool = (ClientPrefs.timeBarType != 'Disabled');
 		timeTxt = new FlxText(STRUM_X + (FlxG.width / 2) - 248, 19, 400, "", 32);
-		timeTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		timeTxt.setFormat(Paths.font("UI.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		timeTxt.scrollFactor.set();
-		timeTxt.alpha = 0;
+		timeTxt.alpha = 0.5;
+		timeTxt.size =64;
 		timeTxt.borderSize = 2;
 		timeTxt.visible = showTime;
 		if(ClientPrefs.downScroll) timeTxt.y = FlxG.height - 44;
@@ -1034,7 +1035,7 @@ class PlayState extends MusicBeatState
 		timeBarBG.x = timeTxt.x;
 		timeBarBG.y = timeTxt.y + (timeTxt.height / 4);
 		timeBarBG.scrollFactor.set();
-		timeBarBG.alpha = 0;
+		timeBarBG.alpha = 0.5;
 		timeBarBG.visible = showTime;
 		timeBarBG.color = FlxColor.BLACK;
 		timeBarBG.xAdd = -4;
@@ -1046,7 +1047,7 @@ class PlayState extends MusicBeatState
 		timeBar.scrollFactor.set();
 		timeBar.createFilledBar(0xFF000000, 0xFFFFFFFF);
 		timeBar.numDivisions = 800; //How much lag this causes?? Should i tone it down to idk, 400 or 200?
-		timeBar.alpha = 0;
+		timeBar.alpha = 0.5;
 		timeBar.visible = showTime;
 		add(timeBar);
 		add(timeTxt);
@@ -2177,7 +2178,7 @@ class PlayState extends MusicBeatState
 						countdownGo.antialiasing = antialias;
 						insert(members.indexOf(notes), countdownGo);
 						FlxTween.tween(countdownGo, {/*y: countdownGo.y + 100,*/ alpha: 0}, Conductor.crochet / 1000, {
-							ease: FlxEase.cubeInOut,
+							ease: FlxEase.circInOut,
 							onComplete: function(twn:FlxTween)
 							{
 								remove(countdownGo);
@@ -2257,9 +2258,9 @@ class PlayState extends MusicBeatState
 	public function updateScore(miss:Bool = false)
 	{
 		scoreTxt.text = 'Score: ' + songScore
-		+ ' | Misses: ' + songMisses
-		+ ' | Rating: ' + ratingName
-		+ (ratingName != '?' ? ' (${Highscore.floorDecimal(ratingPercent * 100, 2)}%) - $ratingFC' : '');
+		+ ' • Misses: ' + songMisses
+		+ ' • Rating: ' + ratingName
+		+ (ratingName != '?' ? ' (${Highscore.floorDecimal(ratingPercent * 100, 2)}%) • $ratingFC' : '');
 
 		if(ClientPrefs.scoreZoom && !miss && !cpuControlled)
 		{
@@ -2988,17 +2989,28 @@ class PlayState extends MusicBeatState
 		{
 			openChartEditor();
 		}
-
+	
 		// FlxG.watch.addQuick('VOL', vocals.amplitudeLeft);
 		// FlxG.watch.addQuick('VOLRight', vocals.amplitudeRight);
+		if (ClientPrefs.newBops)
+		{
 
-		var mult:Float = FlxMath.lerp(1, iconP1.scale.x, CoolUtil.boundTo(1 - (elapsed * 9 * playbackRate), 0, 1));
-		iconP1.scale.set(mult, mult);
-		iconP1.updateHitbox();
+			var mult:Float = FlxMath.lerp(1, iconP1.scale.x, CoolUtil.boundTo(1 - (elapsed * 9 * playbackRate), 0, 1));
+			iconP1.scale.set(mult, mult);
+			iconP1.updateHitbox();
 
-		var mult:Float = FlxMath.lerp(1, iconP2.scale.x, CoolUtil.boundTo(1 - (elapsed * 9 * playbackRate), 0, 1));
-		iconP2.scale.set(mult, mult);
-		iconP2.updateHitbox();
+			var mult:Float = FlxMath.lerp(1, iconP2.scale.x, CoolUtil.boundTo(1 - (elapsed * 9 * playbackRate), 0, 1));
+			iconP2.scale.set(mult, mult);
+			iconP2.updateHitbox();
+
+		}
+		else if(curStep % 4 == 0)
+		{
+			iconP1.setGraphicSize(Std.int(FlxMath.lerp(150, iconP1.width, 0.85)));
+			iconP2.setGraphicSize(Std.int(FlxMath.lerp(150, iconP2.width, 0.85)));
+			iconP1.updateHitbox();
+			iconP2.updateHitbox();
+		}
 
 		var iconOffset:Int = 26;
 
@@ -3306,7 +3318,7 @@ class PlayState extends MusicBeatState
 		chartingMode = true;
 
 		#if desktop
-		DiscordClient.changePresence("Chart Editor", null, null, true);
+		DiscordClient.changePresence("In Chart Editor", null, null, true);
 		#end
 	}
 
@@ -5207,12 +5219,15 @@ class PlayState extends MusicBeatState
 			}
 
 			// Rating FC
-			ratingFC = "";
-			if (sicks > 0) ratingFC = "SFC";
-			if (goods > 0) ratingFC = "GFC";
-			if (bads > 0 || shits > 0) ratingFC = "FC";
-			if (songMisses > 0 && songMisses < 10) ratingFC = "SDCB";
-			else if (songMisses >= 10) ratingFC = "Clear";
+			ratingFC = "CLICK A NOTE GODDAMIT!! (???)";
+			if (sicks > 0) ratingFC = "SICK FULL COMBO (SFC)";
+			if (goods > 0) ratingFC = "GOOD FULL COMBO (GFC)";
+			if (bads > 0 || shits > 0) ratingFC = "(bad) FULL COMBO (FC)";
+			if (songMisses > 0 && songMisses < 10) ratingFC = "(SDCB)";
+			if (songMisses > 0 && songMisses > 9) ratingFC = "(TDCB) • Clear";
+			if (songMisses > 0 && songMisses > 99) ratingFC = "(3DCB) • Too Clear";
+			if (songMisses > 0 && songMisses > 9999) ratingFC = "(SMDCB) • Clear wtf";
+		
 		}
 		updateScore(badHit); // score will only update after rating is calculated, if it's a badHit, it shouldn't bounce -Ghost
 		setOnLuas('rating', ratingPercent);

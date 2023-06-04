@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="SPACEF.png">
+<SubTexture name="SPACEF idle0000" x="0" y="0" width="640" height="361" frameX="0" frameY="0" frameWidth="640" frameHeight="361" />
+<SubTexture name="SPACEF idle0001" x="640" y="0" width="640" height="361" frameX="0" frameY="0" frameWidth="640" frameHeight="361" />
+<SubTexture name="SPACEF idle0002" x="0" y="361" width="626" height="360" frameX="0" frameY="0" frameWidth="640" frameHeight="361" />
+<SubTexture name="SPACEF idle0003" x="640" y="0" width="640" height="361" frameX="0" frameY="0" frameWidth="640" frameHeight="361" />
+</TextureAtlas>

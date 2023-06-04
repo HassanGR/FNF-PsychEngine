@@ -70,6 +70,13 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			true);
 		addOption(option);
 
+		var option:Option = new Option('New Bopping', //Name
+			"If checked, uses the Psych Engine way of bopping. If not, uses the classic Friday Night Funkin' bopping style", //Description
+			'newBops', //Save data variable name
+			'bool', //Variable type
+			ClientPrefs.newBops); //Default value
+		addOption(option);
+
 		var option:Option = new Option('Disable Reset Button',
 			"If checked, pressing Reset won't do anything.",
 			'noReset',
