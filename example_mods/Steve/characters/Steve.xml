@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Steve.png">
+<SubTexture name="Steve IDLE0000" x="0" y="0" width="19" height="28" frameX="-7" frameY="-4" frameWidth="32" frameHeight="32" />
+<SubTexture name="Steve IDLE0001" x="19" y="0" width="22" height="26" frameX="-6" frameY="-6" frameWidth="32" frameHeight="32" />
+<SubTexture name="Steve IDLE0002" x="41" y="0" width="21" height="27" frameX="-6" frameY="-5" frameWidth="32" frameHeight="32" />
+<SubTexture name="Steve IDLE0003" x="0" y="0" width="19" height="28" frameX="-7" frameY="-4" frameWidth="32" frameHeight="32" />
+<SubTexture name="Steve RIGHT0000" x="62" y="0" width="19" height="27" frameX="-7" frameY="-5" frameWidth="32" frameHeight="32" />
+<SubTexture name="Steve RIGHT0001" x="0" y="28" width="19" height="27" frameX="-8" frameY="-5" frameWidth="32" frameHeight="32" />
+<SubTexture name="Steve LEFT0000" x="19" y="28" width="19" height="28" frameX="-6" frameY="-4" frameWidth="32" frameHeight="32" />
+<SubTexture name="Steve LEFT0001" x="38" y="28" width="19" height="28" frameX="-5" frameY="-4" frameWidth="32" frameHeight="32" />
+<SubTexture name="Steve LEFT0002" x="57" y="28" width="19" height="28" frameX="-6" frameY="-4" frameWidth="32" frameHeight="32" />
+<SubTexture name="Steve DOWN0000" x="0" y="56" width="22" height="23" frameX="-6" frameY="-9" frameWidth="32" frameHeight="32" />
+<SubTexture name="Steve DOWN0001" x="22" y="56" width="22" height="24" frameX="-6" frameY="-8" frameWidth="32" frameHeight="32" />
+<SubTexture name="Steve UP0000" x="44" y="56" width="19" height="29" frameX="-7" frameY="-3" frameWidth="32" frameHeight="32" />
+<SubTexture name="Steve UP0001" x="63" y="56" width="19" height="31" frameX="-7" frameY="-1" frameWidth="32" frameHeight="32" />
+<SubTexture name="Steve UP0002" x="0" y="87" width="19" height="30" frameX="-7" frameY="-2" frameWidth="32" frameHeight="32" />
+</TextureAtlas>

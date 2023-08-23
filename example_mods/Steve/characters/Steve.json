@@ -1,0 +1,78 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				-230,
+				-393
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "Steve LEFT"
+		},
+		{
+			"offsets": [
+				-230,
+				-393
+			],
+			"indices": [],
+			"fps": 24,
+			"anim": "idle",
+			"loop": false,
+			"name": "Steve IDLE"
+		},
+		{
+			"offsets": [
+				-230,
+				-393
+			],
+			"indices": [],
+			"fps": 25,
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "Steve RIGHT"
+		},
+		{
+			"offsets": [
+				-230,
+				-393
+			],
+			"indices": [],
+			"fps": 25,
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "Steve DOWN"
+		},
+		{
+			"offsets": [
+				-230,
+				-393
+			],
+			"indices": [],
+			"fps": 25,
+			"anim": "singUP",
+			"loop": false,
+			"name": "Steve UP"
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/Steve",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "mom",
+	"flip_x": false,
+	"healthbar_colors": [
+		136,
+		255,
+		255
+	],
+	"camera_position": [
+		-100,
+		220
+	],
+	"sing_duration": 4,
+	"scale": 15
+}

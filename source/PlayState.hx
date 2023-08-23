@@ -60,6 +60,9 @@ import StageData;
 import FunkinLua;
 import DialogueBoxPsych;
 import Conductor.Rating;
+import sys.FileSystem;
+import sys.io.File;
+import sys.io.Process;
 
 #if !flash 
 import flixel.addons.display.FlxRuntimeShader;
@@ -85,16 +88,16 @@ class PlayState extends MusicBeatState
 	public static var STRUM_X_MIDDLESCROLL = -278;
 
 	public static var ratingStuff:Array<Dynamic> = [
-		['what da hail!', 0.2], //From 0% to 19%
-		['the fuck..', 0.4], //From 20% to 39%
-		['timmy is better.', 0.5], //From 40% to 49%
-		['are you serious right now bro?', 0.6], //From 50% to 59%
-		['good job that was awful', 0.69], //From 60% to 68%
-		['very bad', 0.7], //69%
+		['awful', 0.2], //From 0% to 19%
+		['bad', 0.4], //From 20% to 39%
+		['mid', 0.5], //From 40% to 49%
+		['nice', 0.6], //From 50% to 59%
+		['very nice', 0.69], //From 60% to 68%
+		['good', 0.7], //69%
 		['getting somewhere', 0.8], //From 70% to 79%
-		['very nice!', 0.9], //From 80% to 89%
-		['perfectos.', 1], //From 90% to 99%
-		['Perfect!!', 1] //The value on this one isn't used actually, since Perfect is always "1"
+		['perfect', 0.9], //From 80% to 89%
+		['masin.', 1], //From 90% to 99%
+		['AMAZE!!', 1] //The value on this one isn't used actually, since Perfect is always "1"
 	];
 
 	//event variables
@@ -330,6 +333,7 @@ class PlayState extends MusicBeatState
 	override public function create()
 	{
 		//trace('Playback Rate: ' + playbackRate);
+		Sys.println("bruhda");
 		Paths.clearStoredMemory();
 
 		// for lua
@@ -1022,6 +1026,7 @@ class PlayState extends MusicBeatState
 		timeTxt.alpha = 0.5;
 		timeTxt.size =64;
 		timeTxt.borderSize = 2;
+		timeTxt.borderQuality = 2;
 		timeTxt.visible = showTime;
 		if(ClientPrefs.downScroll) timeTxt.y = FlxG.height - 44;
 
@@ -3093,11 +3098,10 @@ class PlayState extends MusicBeatState
 		FlxG.watch.addQuick("secShit", curSection);
 		FlxG.watch.addQuick("beatShit", curBeat);
 		FlxG.watch.addQuick("stepShit", curStep);
-
 		// RESET = Quick Game Over Screen
 		if (!ClientPrefs.noReset && controls.RESET && canReset && !inCutscene && startedCountdown && !endingSong)
 		{
-			health = 0;
+			return
 			trace("RESET = True");
 		}
 		doDeathCheck();

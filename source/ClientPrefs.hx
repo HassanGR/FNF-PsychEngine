@@ -9,6 +9,7 @@ import Controls;
 class ClientPrefs {
 	public static var downScroll:Bool = false;
 	public static var middleScroll:Bool = false;
+	public static var focus:Bool =  false;
 	public static var opponentStrums:Bool = true;
 	public static var showFPS:Bool = true;
 	public static var flashing:Bool = true;
@@ -97,6 +98,7 @@ class ClientPrefs {
 	public static function saveSettings() {
 		FlxG.save.data.downScroll = downScroll;
 		FlxG.save.data.middleScroll = middleScroll;
+		FlxG.save.data.focus = focus;
 		FlxG.save.data.opponentStrums = opponentStrums;
 		FlxG.save.data.showFPS = showFPS;
 		FlxG.save.data.flashing = flashing;
@@ -181,6 +183,16 @@ class ClientPrefs {
 			} else {
 				FlxG.drawFramerate = framerate;
 				FlxG.updateFramerate = framerate;
+			}
+		if (FlxG.save.data.focus != null && FlxG.save.data.opponentStrums != null && FlxG.save.data.camZooms != null && FlxG.save.data.scoreZoom != null)
+			{
+				focus = FlxG.save.data.focus;
+				FlxG.save.data.opponentStrums = false;
+				FlxG.save.data.camZooms = false;
+				FlxG.save.data.scoreZoom = false;
+				opponentStrums = FlxG.save.data.opponentStrums;
+				camZooms = FlxG.save.data.camZooms;
+				scoreZoom = FlxG.save.data.scoreZooms;
 			}
 		}
 		/*if(FlxG.save.data.cursing != null) {

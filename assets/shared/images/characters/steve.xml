@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="steve.png">
+<SubTexture name="steve idle0000" x="0" y="0" width="114" height="168" frameX="-42" frameY="-24" frameWidth="192" frameHeight="192" />
+<SubTexture name="steve idle0001" x="114" y="0" width="132" height="156" frameX="-36" frameY="-36" frameWidth="192" frameHeight="192" />
+<SubTexture name="steve idle0002" x="246" y="0" width="126" height="162" frameX="-36" frameY="-30" frameWidth="192" frameHeight="192" />
+<SubTexture name="steve idle0003" x="0" y="0" width="114" height="168" frameX="-42" frameY="-24" frameWidth="192" frameHeight="192" />
+<SubTexture name="steve right0000" x="372" y="0" width="114" height="162" frameX="-42" frameY="-30" frameWidth="192" frameHeight="192" />
+<SubTexture name="steve right0001" x="0" y="168" width="114" height="162" frameX="-48" frameY="-30" frameWidth="192" frameHeight="192" />
+<SubTexture name="steve right0002" x="114" y="168" width="114" height="162" frameX="-42" frameY="-30" frameWidth="192" frameHeight="192" />
+<SubTexture name="steve left0000" x="228" y="168" width="114" height="168" frameX="-36" frameY="-24" frameWidth="192" frameHeight="192" />
+<SubTexture name="steve left0001" x="342" y="168" width="114" height="168" frameX="-30" frameY="-24" frameWidth="192" frameHeight="192" />
+<SubTexture name="steve left0002" x="0" y="336" width="114" height="168" frameX="-36" frameY="-24" frameWidth="192" frameHeight="192" />
+<SubTexture name="steve down0000" x="114" y="336" width="132" height="150" frameX="-36" frameY="-42" frameWidth="192" frameHeight="192" />
+<SubTexture name="steve down0001" x="246" y="336" width="132" height="138" frameX="-36" frameY="-54" frameWidth="192" frameHeight="192" />
+<SubTexture name="steve down0002" x="378" y="336" width="132" height="144" frameX="-36" frameY="-48" frameWidth="192" frameHeight="192" />
+<SubTexture name="steve up0000" x="0" y="504" width="114" height="174" frameX="-42" frameY="-18" frameWidth="192" frameHeight="192" />
+<SubTexture name="steve up0001" x="114" y="504" width="114" height="186" frameX="-42" frameY="-6" frameWidth="192" frameHeight="192" />
+<SubTexture name="steve up0002" x="228" y="504" width="114" height="180" frameX="-42" frameY="-12" frameWidth="192" frameHeight="192" />
+</TextureAtlas>
